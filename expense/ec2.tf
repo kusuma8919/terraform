@@ -6,7 +6,8 @@ resource "aws_instance" "expense" {
     tags = merge(
         var.common_tags,
         {
-           Name="${var.project_name[count.index]}-${var.environment}"
+            Name = var.instance_names[count.index]
+            Module = var.instance_names[count.index]
         }
     )
 }
